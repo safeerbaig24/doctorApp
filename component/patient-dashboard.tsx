@@ -1,22 +1,5 @@
-import {
-  Avatar,
-  Badge,
-  Button,
-  Card,
-  CardBody,
-  CardHeader,
-} from "@heroui/react";
-import {
-  Bell,
-  ShoppingCart,
-  User,
-  Activity,
-  Settings,
-  Zap,
-  Target,
-  Minus,
-  ArrowDown,
-} from "lucide-react";
+import { Button, Card, CardBody, CardHeader } from "@heroui/react";
+import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 
 export function PatientDashboard() {
@@ -79,7 +62,7 @@ export function PatientDashboard() {
             </div>
 
             {/* Sidebar Button Group */}
-            <div className="hidden lg:flex flex-col py-6 space-y-6">
+            <div className="hidden lg:flex h-full flex-col py-6 space-y-6">
               <Button
                 variant="ghost"
                 className="rounded-full p-2 bg-blue-500 text-white w-[57px] h-[57px] flex justify-center items-center"
@@ -114,7 +97,7 @@ export function PatientDashboard() {
           </div>
 
           {/* Right Panel */}
-          <div className="w-full lg:w-1/2 p-6 space-y-6">
+          <div className="w-full lg:w-1/2 space-y-4">
             {/* Stay Tuned Card */}
             <Card
               className="bg-[#F6F6F605] rounded-2xl"
@@ -123,7 +106,7 @@ export function PatientDashboard() {
                 boxShadow: "0px 2px 26px 0px #00000014",
               }}
             >
-              <CardBody className="p-4">
+              <CardBody className="px-4 py-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <Image
@@ -173,23 +156,25 @@ export function PatientDashboard() {
                 boxShadow: "0px 2px 26px 0px #00000014",
               }}
             >
-              <CardHeader>
-                <div className="flex items-center space-x-2">
+              <CardHeader className="p-0">
+                <div className="flex items-center gap-3 mb-7">
                   <Image src={"/aging.svg"} alt="bell" width={34} height={32} />
-                  <span className="text-black text-2xl">Aging</span>
-                  <span className="text-sm text-[#0000008C]">
-                    Tru Diagnostics
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-black text-2xl">Aging</span>
+                    <span className="text-sm text-[#0000008C]">
+                      Tru Diagnostics
+                    </span>
+                  </div>
                 </div>
               </CardHeader>
-              <CardBody className="space-y-4">
+              <CardBody className="p-0">
                 <div className="grid grid-cols-2 gap-4">
                   <div
                     style={{ boxShadow: "0px 0px 8px 0px #EBEBEB inset" }}
                     className="p-6 rounded-2xl bg-[#FFFFFF99]"
                   >
                     <div className="flex items-center space-x-1 mb-1 w-full">
-                      <span className="text-sm font-medium text-black">
+                      <span className="text-base font-medium text-black">
                         Biological age
                       </span>
                       <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
@@ -204,12 +189,12 @@ export function PatientDashboard() {
                           width={40}
                           height={26}
                         />
-                        <span className="text-2xl font-bold text-black">
+                        <span className="text-4xl font-bold text-black">
                           47
                         </span>
                         <span className="text-sm text-black">yrs</span>
                       </div>
-                      <p className="text-xs text-black mt-1">
+                      <p className="text-sm text-black mt-1">
                         10 years higher
                         <br />
                         than chronological age
@@ -221,7 +206,7 @@ export function PatientDashboard() {
                     className="p-6 rounded-2xl bg-[#FFFFFF99]"
                   >
                     <div className="flex items-center space-x-1 mb-1">
-                      <span className="text-sm font-medium text-black">
+                      <span className="text-base font-medium text-black">
                         DunedinPACE of Aging
                       </span>
                       <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
@@ -236,11 +221,11 @@ export function PatientDashboard() {
                           width={40}
                           height={26}
                         />
-                        <span className="text-2xl font-bold text-black">
+                        <span className="text-4xl font-bold text-black">
                           1.05
                         </span>
                       </div>
-                      <p className="text-xs text-black mt-1">
+                      <p className="text-base text-black mt-1">
                         Biological age exceeds
                         <br />
                         calendar age
@@ -259,8 +244,8 @@ export function PatientDashboard() {
                 boxShadow: "0px 2px 26px 0px #00000014",
               }}
             >
-              <CardHeader>
-                <div className="flex items-center space-x-2">
+              <CardHeader className="p-0">
+                <div className="flex items-center gap-3 mb-5">
                   <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
                     <Image
                       src={"/live-data.png"}
@@ -269,65 +254,92 @@ export function PatientDashboard() {
                       height={31}
                     />
                   </div>
-                  <span className="text-black">Live Data</span>
+                  <span className="text-2xl text-black">Live Data</span>
                 </div>
               </CardHeader>
-              <CardBody>
+              <CardBody className="p-0">
                 <div className="grid grid-cols-3 gap-4">
                   <div
                     style={{ boxShadow: "0px 0px 8px 0px #EBEBEB inset" }}
-                    className="p-6 rounded-2xl bg-[#FFFFFF99]"
+                    className="p-5 rounded-2xl bg-[#FFFFFF99]"
                   >
-                    <div className="text-center">
-                      <div className="flex items-center justify-center space-x-1 mb-2">
-                        <Image
-                          src={"/heart.png"}
-                          alt="bell"
-                          width={56}
-                          height={56}
-                        />
+                    <div>
+                      <div className="flex items-center space-x-1 mb-2">
+                        <div
+                          className="h-14 w-14 rounded-2xl flex justify-center items-center"
+                          style={{
+                            boxShadow:
+                              "2.51px 7.54px 27.93px -3.63px #1634501A",
+                          }}
+                        >
+                          <div className=" relative w-[29px] h-[27px]">
+                            <Image src={"/heart.png"} alt="bell" fill />
+                          </div>
+                        </div>
                         <span className="text-sm text-black">Heart Rate</span>
                       </div>
-                      <div className="text-2xl font-bold text-black">98</div>
-                      <div className="text-x text-black">bpm</div>
+                      <div className="text-4xl font-bold text-black">
+                        <span>98</span>
+                        <span className="text-base text-[#818181] ml-2">
+                          bpm
+                        </span>
+                      </div>
                     </div>
                   </div>
                   <div
                     style={{ boxShadow: "0px 0px 8px 0px #EBEBEB inset" }}
-                    className="p-6 rounded-2xl bg-[#FFFFFF99]"
+                    className="p-5 rounded-2xl bg-[#FFFFFF99]"
                   >
-                    <div className="text-center">
-                      <div className="flex items-center justify-center space-x-1 mb-2">
-                        <Image
-                          src={"/sugar.png"}
-                          alt="bell"
-                          width={56}
-                          height={56}
-                        />
+                    <div>
+                      <div className="flex items-center space-x-1 mb-2">
+                        <div
+                          className="h-14 w-14 rounded-2xl flex justify-center items-center"
+                          style={{
+                            boxShadow:
+                              "2.51px 7.54px 27.93px -3.63px #1634501A",
+                          }}
+                        >
+                          <div className=" relative w-5 h-[34px]">
+                            <Image src={"/sugar.png"} alt="bell" fill />
+                          </div>
+                        </div>
                         <span className="text-sm text-black">Blood Sugar</span>
                       </div>
-                      <div className="text-2xl font-bold text-black">80</div>
-                      <div className="text-xs text-black">mg / dL</div>
+                      <div className="text-4xl font-bold text-black">
+                        <span>80</span>
+                        <span className="text-base text-[#818181] ml-2">
+                          mg / dL
+                        </span>
+                      </div>
                     </div>
                   </div>
                   <div
                     style={{ boxShadow: "0px 0px 8px 0px #EBEBEB inset" }}
-                    className="p-6 rounded-2xl bg-[#FFFFFF99]"
+                    className="p-5 rounded-2xl bg-[#FFFFFF99]"
                   >
-                    <div className="text-center">
-                      <div className="flex items-center justify-center space-x-1 mb-2">
-                        <Image
-                          src={"/blood.png"}
-                          alt="bell"
-                          width={56}
-                          height={56}
-                        />
+                    <div>
+                      <div className="flex items-center space-x-1 mb-2">
+                        <div
+                          className="h-14 w-14 rounded-2xl flex justify-center items-center"
+                          style={{
+                            boxShadow:
+                              "2.51px 7.54px 27.93px -3.63px #1634501A",
+                          }}
+                        >
+                          <div className=" relative w-[35px] h-[35px]">
+                            <Image src={"/blood.png"} alt="bell" fill />
+                          </div>
+                        </div>
                         <span className="text-sm text-black">
                           Blood Pressure
                         </span>
                       </div>
-                      <div className="text-2xl font-bold text-black">102</div>
-                      <div className="text-xs text-black">/ 72 mmhg</div>
+                      <div className="text-4xl font-bold text-black">
+                        <span>102</span>
+                        <span className="text-base text-[#818181] ml-2">
+                          / 72 mmhg
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -342,11 +354,11 @@ export function PatientDashboard() {
                 boxShadow: "0px 2px 26px 0px #00000014",
               }}
             >
-              <CardHeader>
-                <div className="flex items-center space-x-2">
+              <CardHeader className="p-0">
+                <div className="flex items-center gap-3 mb-2">
                   <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
                     <Image
-                      src={"/health.png"}
+                      src={"/health.svg"}
                       alt="bell"
                       width={40}
                       height={40}
@@ -355,68 +367,75 @@ export function PatientDashboard() {
                   <span className="text-black text-2xl">Total Health</span>
                 </div>
               </CardHeader>
-              <CardBody>
+              <CardBody className="p-0">
                 <div className="grid grid-cols-3 gap-4">
                   <div
                     style={{ boxShadow: "0px 0px 8px 0px #EBEBEB inset" }}
-                    className="p-6 rounded-2xl bg-[#FFFFFF99]"
+                    className="p-3 rounded-2xl bg-[#FFFFFF99]"
                   >
-                    <div className="text-center">
-                      <div className="flex items-center justify-center space-x-1 mb-2">
-                        <div className="w-6 h-6 border-2 border-blue-500 rounded-full flex items-center justify-center">
-                          <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                        </div>
-                        <span className="text-sm text-black">
+                    <div>
+                      <div className="flex items-center justify-between space-x-1 mb-2">
+                        <span className="text-base text-black">
                           Cardiovascular system
                         </span>
+                          <Image src={"/cardi.png"} alt="cardi" width={46} height={46}/>
                       </div>
-                      <div className="text-2xl font-bold text-red-500">89</div>
-                      <div className="text-xs text-gray-600">/100</div>
-                      <div className="text-xs text-gray-500 mt-1">
+                       <div className="flex items-center space-x-2"> 
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div className="text-4xl font-bold text-black">
+                        89 
+                      </div>
+                      <div className="text-base text-[#808080]">/ 100</div>
+                        </div>
+                      <div className="text-xs text-[#808080] mt-1">
                         Checked 15 days ago
                       </div>
                     </div>
                   </div>
                   <div
                     style={{ boxShadow: "0px 0px 8px 0px #EBEBEB inset" }}
-                    className="p-6 rounded-2xl bg-[#FFFFFF99]"
+                    className="p-3 rounded-2xl bg-[#FFFFFF99]"
                   >
-                    <div className="text-center">
-                      <div className="flex items-center justify-center space-x-1 mb-2">
-                        <div className="w-6 h-6 border-2 border-blue-500 rounded-full flex items-center justify-center">
-                          <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                        </div>
-                        <span className="text-sm text-black">
+                    <div>
+                      <div className="flex items-center justify-between space-x-1 mb-2">
+                        <span className="text-base text-black">
                           Digestive system
                         </span>
+                         <Image src={"/digest.png"} alt="cardi" width={46} height={46}/>
                       </div>
-                      <div className="text-2xl font-bold text-yellow-500">
+                      <div className="flex items-center space-x-2">   
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <div className="text-4xl font-bold text-black">
                         56
                       </div>
-                      <div className="text-xs text-gray-600">/100</div>
-                      <div className="text-xs text-gray-500 mt-1">
-                        Checked 1 mo. ago
+                      <div className="text-base text-[#808080]">
+                        / 100
                       </div>
+                      </div>
+                        <div className="text-xs text-[#808080] mt-1">
+                          Checked 1 mo. ago
+                        </div>
                     </div>
                   </div>
                   <div
                     style={{ boxShadow: "0px 0px 8px 0px #EBEBEB inset" }}
-                    className="p-6 rounded-2xl bg-[#FFFFFF99]"
+                    className="p-3 rounded-2xl bg-[#FFFFFF99]"
                   >
-                    <div className="text-center">
-                      <div className="flex items-center justify-center space-x-1 mb-2">
-                        <div className="w-6 h-6 border-2 border-blue-500 rounded-full flex items-center justify-center">
-                          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                        </div>
-                        <span className="text-sm text-black">
+                    <div>
+                      <div className="flex items-center justify-between space-x-1 mb-2">
+                        <span className="text-base text-black">
                           Metabolic system
                         </span>
+                         <Image src={"/meta.png"} alt="cardi" width={46} height={46}/>
                       </div>
-                      <div className="text-2xl font-bold text-green-500">
+                        <div className="flex items-center space-x-2"> 
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      <div className="text-4xl font-bold text-black">
                         23
                       </div>
-                      <div className="text-xs text-gray-600">/100</div>
-                      <div className="text-xs text-gray-500 mt-1">
+                        <div className="text-base text-[#808080]">/100</div>
+                        </div>
+                      <div className="text-xs text-[#808080] mt-1">
                         Checked 6 mo. ago
                       </div>
                     </div>
